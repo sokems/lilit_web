@@ -1,0 +1,667 @@
+/* BEGIN Light */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/Light/OpenSans-Light.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/Light/OpenSans-Light.woff?v=1.1.0") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+/* END Light */
+/* BEGIN Light Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/LightItalic/OpenSans-LightItalic.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/LightItalic/OpenSans-LightItalic.woff?v=1.1.0") format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+/* END Light Italic */
+/* BEGIN Regular */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/Regular/OpenSans-Regular.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* END Regular */
+/* BEGIN Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/Italic/OpenSans-Italic.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/Italic/OpenSans-Italic.woff?v=1.1.0") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* END Italic */
+/* BEGIN Semibold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/Semibold/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/Semibold/OpenSans-Semibold.woff?v=1.1.0") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+/* END Semibold */
+/* BEGIN Semibold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff?v=1.1.0") format("woff");
+  font-weight: 600;
+  font-style: italic;
+}
+/* END Semibold Italic */
+/* BEGIN Bold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/Bold/OpenSans-Bold.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/Bold/OpenSans-Bold.woff?v=1.1.0") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+/* END Bold */
+/* BEGIN Bold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/BoldItalic/OpenSans-BoldItalic.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/BoldItalic/OpenSans-BoldItalic.woff?v=1.1.0") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+/* END Bold Italic */
+/* BEGIN Extrabold */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/ExtraBold/OpenSans-ExtraBold.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/ExtraBold/OpenSans-ExtraBold.woff?v=1.1.0") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+/* END Extrabold */
+/* BEGIN Extrabold Italic */
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff2?v=1.1.0") format("woff2"),
+       url("../fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff?v=1.1.0") format("woff");
+  font-weight: 800;
+  font-style: italic;
+}
+/* END Extrabold Italic */
+
+
+
+/* Общий стиль */
+html, body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #444;
+}
+/* Ссылки без наведения */
+a {
+	color: #000000;
+	text-decoration: none;
+}
+/* Ссылки наведение */
+a:hover {
+	color: #0070BC;
+	text-decoration: underline;
+}
+/* Ссылки для изображений, максимум 600px */
+img {max-width: 600px; height: auto;}
+
+img.img-article-left {
+	max-width: 300px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+
+img.img-article-left.thumb {
+	max-width: 150px;
+	height: auto;
+}
+
+/* Кнопки */
+
+p.link-read-post {
+	text-align: left;
+
+}
+
+
+p.link-read-post a {
+	padding: 10px;
+	min-width: 100px;
+	background: #0070BC;
+	color: #fff;
+	text-decoration: none;
+}
+
+div.article-panel {
+    background: #eee;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #555;
+}
+div.article-panel p.first {
+    margin: 0;
+    float: left;
+}
+div.article-panel p.last {
+    margin: 0;
+    float: right;
+}
+
+ul.list-articles {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.list-articles li {
+	border-bottom: 10px solid #ccc;
+	margin-bottom: 10px; /* Изменяет отступ между строками */
+}
+
+ul.list-articles_2 {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.list-articles_2 li {
+	border-bottom: 0px solid #ccc;
+	margin-bottom: 10px; /* Изменяет отступ между строками */
+}
+
+.list-title {
+	margin: 0 0 10px 10px; /* Отступы: сверху, справа, снизу, слева */
+}
+
+.table-page {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	font-family: 'Open Sans', sans-serif; /* Замените на желаемый шрифт */
+	font-style: normal;
+}
+.table-page tr {
+	height: 100%;
+	font-size: 14px;
+}
+
+.clear {clear: both;}
+
+.header {
+	background: #0070BC;
+	height: 100px;
+}
+
+.logo {
+	background: url('../images/logo.png') no-repeat 10px 0px;
+	width: 100px;
+	height: 100px;
+	background-size: contain;
+}
+
+ul.mainmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 100px;
+	color: #ffffff;
+	font-size: 18px;
+	overflow: hidden;
+	font-weight: bold;
+}
+ul.mainmenu li {
+	float: left;
+	margin: 35px 0px 0 30px;
+}
+
+ul.mainmenu li.last {
+    margin-right: 40px; /* Замените 20px на желаемый отступ */
+}
+
+ul.mainmenu li.logo {margin: 0;}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+	color: #ffffff;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: #E0E0E0;
+}
+
+.panelitems {
+	text-align: center;
+}
+
+ul.langitem {
+	list-style: none;
+	display: inline-block;
+	margin: 30px;
+	padding: 0;
+	max-width: 300px
+}
+ul.langitem li {
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+ul.langitem li.image {
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+ul.langitem li.descr {
+	color: #777;
+	height: 170px;
+	overflow: hidden;
+}
+ul.langitem li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+}
+ul.langitem li a:hover {
+	color: #777;
+}
+div.button {
+	background: #3F4137;
+	max-width: 200px;
+	margin: 0 auto;
+	padding: 5px 20px 5px 20px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.table-content {
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+}
+
+.left-chapters {
+	margin: 0;
+	background: #eee;
+	border-right: 1px solid #ccc;
+	min-height: 100%;
+}
+.left-chapters ul {
+	width: 230px;
+	min-height: 100%;
+	margin: 0;
+	padding: 20px 10px 10px 20px;
+	list-style: none;
+	font-size: 15px;
+}
+.left-chapters ul li {
+	margin: 30px 0 0 0;
+	color: #999;
+}
+.left-chapters ul li.selected {color: #0070BC; }
+.left-chapters ul li a {
+	color: #444;
+	text-decoration: none;
+}
+.left-chapters ul li a:hover { color: #CC0000; }
+.left-chapters ul li.share {margin: 60px 0 0 0;}
+.left-chapters ul li.share p {margin: 30px 0 30px 0;}
+.left-chapters ul li.share a {
+	display: inline-block;
+	width: auto;
+	height: 40px;
+	margin: 0 20px 0 0;
+}
+
+.content {
+	padding: 40px 20px 20px 40px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+ul.breadcrumbs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+ul.breadcrumbs li {
+	display: inline-block;
+}
+ul.breadcrumbs li a {
+	color: #0070BC;
+	text-decoration: none;
+}
+ul.breadcrumbs li a:hover { color: #CC0000; }
+ul.breadcrumbs li:after{
+	padding: 0 10px 0 10px;
+	content: "\2192";
+}
+ul.breadcrumbs li.last:after {content: "";}
+
+ul.control {
+	margin: 0;
+	padding: 60px 0 0 0;
+	list-style: none;
+	font-family: Sans-serif, Arial, Tahoma;
+	font-size: 18px;
+	width: 100%;
+}
+ul.control li {	float: left; padding: 0 0 0 10px;}
+ul.control li.first:before {content: "\2190"; padding: 0 10px 0 0;}
+ul.control li.last {float: right; padding: 0 40px 0 0;}
+ul.control li.last:after {content: "\2192"; padding: 0 0 0 10px;}
+ul.control li a { color: #0070BC; text-decoration: none; }
+ul.control li a:hover { color: #CC0000; }
+
+ul.content-table {
+	margin: 0;
+	padding: 60px 0 0 30px;
+	list-style: none;
+	font-family: Sans-serif, Arial, Tahoma;
+	font-size: 28px;
+}
+ul.content-table li {
+	margin: 0 0 40px 0;
+}
+ul.content-table li a {
+	color: #777;
+	text-decoration: none;
+}
+ul.content-table li a:hover {color: #fff;}
+
+.content-text {
+	margin: 0px 0 0 30px;
+	color: #595959;
+	font-size: 15px;
+	font-family: "Open Sans";
+}
+.content-text h1 {font-size: 32px;}
+
+ul.lang-list {
+	list-style: none;
+	margin: 0;
+	padding: 14px 0 0 0;
+	background: #3F4137;
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #959A82;
+	box-sizing: border-box;
+	font-size: 18px;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+ul.lang-list li {
+	display: inline-block;
+	margin-left: 40px;
+}
+ul.lang-list li.selected {color: #fff; border-bottom: 1px solid #fff;}
+ul.lang-list li a {
+	color: #eee;
+	text-decoration: none;
+}
+ul.lang-list li a:hover {color: #fff;}
+
+.topic-subject .topic-line {
+	border-bottom: 1px solid #CC0000;
+	margin-top: -16px;
+}
+
+.topic-subject .topic-text {
+	display: inline-block;
+	font-size: 28px;
+	color: #777;
+	padding: 0 10px 0 10px;
+	margin-left: 30px;
+	background: #fff;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+
+.list-topic {
+	margin: 40px 0 60px 0;
+	font-family: Sans-serif, Arial, Tahoma;
+}
+.list-topic p {
+	margin: 0;
+	font-size: 28px;
+}
+.list-topic ol {
+	columns: 2;
+	-webkit-columns: 2;
+	column-gap: 40px;
+}
+.list-topic ol li {
+	display: list-item;
+	margin: 10px 10px 0 0px;
+	padding: 0 0 0 10px;
+}
+.list-topic ol li a {
+	color: #0070BC;
+	text-decoration: none;
+}
+.list-topic ol li a:hover {color: #CC0000;}
+
+.highlight {
+	max-width: 350px;
+	padding: 0 10px 0 10px;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	background: #f0f0f0;
+}
+.highlight p { margin: 0; }
+.highlight .block {
+	width: 100%;
+	margin: 0;
+}
+.highlight .block p { margin: 0; }
+
+#footer {
+	box-sizing: border-box;
+
+	background: #3F4137;
+	padding: 5px;
+	color: #aaa;
+	font-size: 14px;
+	font-family: Verdana, Geneva, Arial, Helvetica;
+	text-align: left;
+	overflow: hidden;
+}
+#footer a {
+	text-decoration: underline;
+	color: #aaa;
+}
+
+.form-input {
+    width: 300px;
+    font-size: 16px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+
+hr {
+    border: none; /* Убираем стандартное оформление */
+    height: 0.1px; /* Толщина линии */
+    background-color: #aaa; /* Цвет линии */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+hr.dashed {
+    border-top: 2px dashed #333; /* Пунктирная линия */
+    background: none;
+}
+
+hr.double {
+    border-top: 3px double #333; /* Двойная линия */
+    background: none;
+}
+
+hr.custom {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, #333, #ddd, #333); /* Градиентная линия */
+    margin: 20px 0;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 8px auto;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+	background-color: #ffffff;
+}
+
+.accordion-item {
+    border-top: 1px solid #ddd;
+}
+
+.accordion-item:first-child {
+    border-top: none;
+}
+
+.accordion-title {
+    background: #fff;
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.accordion-title:hover {
+    background: #e2e2e2;
+	color: #0070BC
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    border-top: 3px solid #ddd;
+}
+
+.accordion-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-content li {
+    margin: 0 0;
+}
+
+.accordion-content a {
+    text-decoration: none;
+    color: #0070BC;
+    transition: color 0.3s;
+}
+
+.accordion-content a:hover {
+    color: #CC0000;
+}
+
+.accordion-title h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.button-link {
+    display: inline-block;
+    width: 200px; /* Вы можете изменить размер по своему усмотрению */
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    background-color: #ccc;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px; /* Для закругленных углов, опционально */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход цвета */
+}
+
+.button-link:hover {
+    background-color: #0070BC;
+    color: white;
+	text-decoration: none;
+}
+
+.rectangle-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступ между элементами */
+    justify-content: left;
+    padding: 0px;
+    list-style: none;
+    margin: 0;
+    overflow: hidden; /* Обеспечивает скрытие элементов, выходящих за пределы контейнера */
+}
+
+.rectangle {
+    width: 300px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+    position: relative; /* Добавлено для правильного применения transform */
+}
+
+
+.rectangle.hide {
+    opacity: 0;
+    transform: translateY(-20px); /* Отрегулируйте, как вам нужно */
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    color: #565A63;
+    text-align: left;
+}
+
+.features li {
+    margin-bottom: 10px;
+}
+
+.short-text {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.short-text:hover::after {
+    content: attr(data-full-text);
+    position: absolute;
+    left: 0;
+    bottom: 100%; /* Позиционируем всплывающее окно вверх от элемента */
+    white-space: pre-wrap;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 1000;
+    width: 300px; /* Вы можете настроить ширину по вашему усмотрению */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px); /* При необходимости отрегулируйте для дополнительного отступа */
+}

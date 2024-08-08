@@ -1,0 +1,16 @@
+{% extends 'mainpage/base.html' %}
+{% block left %}
+	{% if shops %}
+		{% for shop in shops %}
+			<li><a href="{% url 'mshop' shop.pk %}">{{ shop.full_name_bot }}</a></li>
+		{% endfor %}
+	{% else %}
+		<li>Выберите функционал</li>
+	{% endif %}
+{% endblock %}
+{% block content %}
+<ul class="list-articles">
+	<h2>{{ title }}</h2>
+    <p>Выберите магазин слева.
+</ul>
+{% endblock %}

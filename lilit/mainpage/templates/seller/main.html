@@ -1,0 +1,28 @@
+{% extends 'mainpage/base.html' %}
+{% block left %}
+        <li class="selected">Все категории</li>
+        <li><a href="#">Актрисы</a></li>
+        <li><a href="#">Певицы</a></li>
+        <li><a href="#">Спортсменки</a></li>
+{% endblock %}
+{% block content %}
+<ul class="list-articles">
+	<h2>{{ title }}</h2>
+    <p>Содержимое главной страницы
+</ul>
+{% endblock %}
+{% block content %}
+<h1>{{title}}</h1>
+
+<ul>
+    {% for shop in shops %}
+    <li>
+        <h2>{{ shop.full_name_bot }}</h2>
+        <p>Дней до конца учетного периода {{ shop.date_pay }}</p>
+        <p>Сумма оплаты {{ shop.sum_pay }}</p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'mainpage/base.html' %}
+{% load static %}
+{% block left %}
+	{% if shops %}
+		<h3 class="list-title">{{ title }}</h3>
+		{% for shop in shops %}
+			<div class="accordion">
+				<div class="accordion-item">
+					<div class="accordion-title">
+						<h2>{{ shop.full_name_bot }}</h2>
+					</div>
+					<div class="accordion-content">
+						<ul>
+							<h4>Выберите действие:</h4>
+							{% for sm in shop_menu %}
+								<li><a href="{% url sm.index shop.pk %}">{{ sm.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+        	</div>
+		{% endfor %}
+	{% else %}
+		<li>Выберите функционал</li>
+	{% endif %}
+	<script src="{% static 'mainpage/js/script.js' %}"></script>
+{% endblock %}
+{% block content %}
+<ul class="list-articles_2">
+	<h1>{{ name_bot.full_name_bot }} / CRM</h1>
+	<div class="rectangle-list">
+	{% if list_reqs %}
+		{% for r in list_reqs %}
+				<div class="rectangle">
+					<h1>Запрос ID {{ r.pk }}</h1>
+					<ul class="features">
+							<li>Тип запроса: <b>{{ r.type_req }}</b></li>
+							<li>Дата обращения: <b>{{ r.date_create }}</b></li>
+							<li>Имя: <b>{{ r.name_user }}</b></li>
+							<li>Номер телефона: <b>{{ r.phone_user }}</b></li>
+							<li>Ссылка: <b><a href="{{ r.link_user }}">Написать</a></b></li>
+							{% if r.type_req == 'Предложение' %}
+								<li>Товар: <b>-</b></li>
+								<li>Где заказан: <b>-</b></li>
+								<li>Дата заказа: <b>-</b></li>
+							{% else %}
+								<li>Товар: <b>{{ r.id_item.name_item }}</b></li>
+								<li>Где заказан: <b>{{ r.where_user }}</b></li>
+								<li>Дата заказа: <b>{{ r.when_user }}</b></li>
+							{% endif %}
+							<li>Вопрос: <b class="short-text" data-full-text="{{ r.text_q }}">{{ r.text_q|truncatechars:15 }}</b></li>
+
+
+					</ul>
+					<a class="button-link accept-button" data-request-id="{{ r.pk }}">Принять</a>
+				</div>
+		{% endfor %}
+	{% else %}
+		<p>Запросов нет.
+	{% endif %}
+	<!-- JavaScript -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var acceptButtons = document.querySelectorAll('.accept-button');
+			acceptButtons.forEach(function(button) {
+				button.addEventListener('click', function() {
+					var rectangle = button.closest('.rectangle');
+					rectangle.style.display = 'none';
+				});
+			});
+		});
+
+		document.addEventListener('DOMContentLoaded', function() {
+			// Находим все кнопки с классом .accept-button
+			var acceptButtons = document.querySelectorAll('.accept-button');
+
+			acceptButtons.forEach(function(button) {
+				button.addEventListener('click', function(event) {
+					event.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+					var rectangle = button.closest('.rectangle');
+					var requestId = button.getAttribute('data-request-id'); // Получаем ID запроса из атрибута data
+
+					// Отправляем AJAX-запрос
+					fetch('/manag/update-request/' + requestId + '/', {
+						method: 'POST',
+						headers: {
+							'X-Requested-With': 'XMLHttpRequest',
+							'Content-Type': 'application/x-www-form-urlencoded',
+							'X-CSRFToken': getCookie('csrftoken') // Добавляем CSRF-токен
+						},
+						body: new URLSearchParams({
+							'csrfmiddlewaretoken': getCookie('csrftoken') // CSRF-токен
+						})
+					}).then(response => response.json())
+					  .then(data => {
+						  if (data.status === 'success') {
+							  // Скрываем блок, если запрос был успешно обновлен
+							  rectangle.style.display = 'none';
+						  } else {
+							  // Обработка ошибки
+							  alert('Ошибка: ' + (data.message || 'Не удалось обновить запрос'));
+						  }
+					  });
+				});
+			});
+
+			// Функция для получения CSRF-токена из cookies
+			function getCookie(name) {
+				let cookieValue = null;
+				if (document.cookie && document.cookie !== '') {
+					let cookies = document.cookie.split(';');
+					for (let i = 0; i < cookies.length; i++) {
+						let cookie = cookies[i].trim();
+						if (cookie.substring(0, name.length + 1) === (name + '=')) {
+							cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+							break;
+						}
+					}
+				}
+				return cookieValue;
+			}
+		});
+	</script>
+	</div>
+</ul>
+{% endblock %}
